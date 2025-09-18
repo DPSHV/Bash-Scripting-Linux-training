@@ -1,32 +1,56 @@
-# 📘 Bash + Linux Admin Scripts (Learning Edition)
+# 🧰 Bash & Linux Admin Scripting Portfolio
 
-A curated collection of Bash scripts built step-by-step while learning Linux system administration and scripting fundamentals.
+This repository is a curated collection of Bash scripts developed during my deep-dive into Linux system administration and shell scripting.
 
-This repo grows daily — each script reflects a specific learning milestone, focusing on clarity, structure, and real-world utility.
+Each script is purpose-built to explore a specific concept or solve a real-world task — with a strong focus on correctness, clarity, and production-readiness.
 
-## 🚀 Goals
+> 💡 Think of this as a hands-on portfolio: designed for both learning and demonstrating practical Bash/Linux skills.
 
-- Learn by doing — each script solves a real admin task
-- Practice writing clean, modular, and safe Bash
-- Understand Linux tools, logs, permissions, filesystems, and processes
-- Build habits for production-grade scripting early on
+---
 
-## 📂 Current Scripts
+## 📌 What’s Inside
 
-| Script                 | Purpose                                          |
-|------------------------|--------------------------------------------------|
-| `user_process_report.sh` | List and count all user processes             |
-| `files_linecount.sh`     | Sum up total line count across input files     |
-| `txt_backup.sh`          | Backup non-empty `.txt` files with date suffix |
-| `find_uniq_errors.sh`    | Extract and deduplicate log errors             |
+- **Self-contained scripts**, each with clear purpose and usage
+- **Topics covered**:
+  - Process inspection and control
+  - Filesystem operations
+  - Text processing and filtering
+  - Logging and validation
+  - Safe script structure and flag parsing (`--dry-run`, `--help`, etc.)
+- **Tools used**: `grep`, `find`, `cut`, `sort`, `uniq`, `wc`, `ps`, `stat`, `tail`, etc.
+- **Scripting techniques**:
+  - Functions, loops, case-switch parsing
+  - Parameter expansion
+  - Input validation
+  - Safe defaults (`set -euo pipefail`)
 
-Each script includes:
-- Input validation
-- Logging functions
-- Clean code style with comments
-- Optional flags (e.g. `--dry-run`, `--help`)
+---
 
-## 🧠 Usage (for practice)
+## 📂 Example Scripts
+
+| Script                 | Description                                          |
+|------------------------|------------------------------------------------------|
+| `user_process_report.sh` | Lists and counts processes for current user        |
+| `files_linecount.sh`     | Totals line counts across given files              |
+| `txt_backup.sh`          | Backs up `.txt` files with date suffix (supports `--dry-run`) |
+| `find_uniq_errors.sh`    | Extracts and deduplicates error lines from logs    |
+
+All scripts follow consistent structure and are written to be **understandable, maintainable, and reusable**.
+
+---
+
+## 🎯 Purpose
+
+This repository serves both as:
+
+1. **A learning project** — building practical fluency with Linux/Bash
+2. **A technical showcase** — demonstrating scripting ability, attention to detail, and real-world problem solving
+
+---
+
+## ✅ Usage
+
+All scripts are runnable directly from the terminal:
 
 ```bash
 chmod +x script.sh
