@@ -1,57 +1,48 @@
-# 🧰 Bash & Linux Admin Scripting Portfolio
+🐚 Bash & Linux Bootcamp – Practical Scripting for Sysadmins
 
-This repository is a curated collection of Bash scripts developed during my deep-dive into Linux system administration and shell scripting.
+This repository documents my focused learning journey through Bash scripting and Linux system administration from the ground up, with a clear goal:
+build real-world, production-grade tools useful in day-to-day infrastructure work.
 
-Each script is purpose-built to explore a specific concept or solve a real-world task — with a strong focus on correctness, clarity, and production-readiness.
+💡 What you'll find here
 
-> 💡 Think of this as a hands-on portfolio: designed for both learning and demonstrating practical Bash/Linux skills.
+📜 Scripts written and iterated manually, not generated or copied
 
----
+🛠️ Tools focused on user management, log parsing, filesystem operations, process control, and more
 
-## 📌 What’s Inside
+🧩 Each script supports flags, validation, and debugging logic
 
-- **Self-contained scripts**, each with clear purpose and usage
-- **Topics covered**:
-  - Process inspection and control
-  - Filesystem operations
-  - Text processing and filtering
-  - Logging and validation
-  - Safe script structure and flag parsing (`--dry-run`, `--help`, etc.)
-- **Tools used**: `grep`, `find`, `cut`, `sort`, `uniq`, `wc`, `ps`, `stat`, `tail`, etc.
-- **Scripting techniques**:
-  - Functions, loops, case-switch parsing
-  - Parameter expansion
-  - Input validation
-  - Safe defaults (`set -euo pipefail`)
+💻 Everything is built with real sysadmin use-cases in mind — audits, reporting, automation, and debugging
 
----
+🔍 Examples
+Day	Focus Area	Example Scripts
+1–3	Files, permissions	file_report.sh, perm_check.sh
+4–5	Processes, search	user_process_report.sh, txt_backup.sh
+6	Streams, functions	log_cleaner.sh, archive_dir.sh
+7	Users & groups	user_checker.sh, group_check.sh
 
-## 📂 Example Scripts
+More coming soon — each day adds new tooling and scripting depth.
 
-| Script                 | Description                                          |
-|------------------------|------------------------------------------------------|
-| `user_process_report.sh` | Lists and counts processes for current user        |
-| `files_linecount.sh`     | Totals line counts across given files              |
-| `txt_backup.sh`          | Backs up `.txt` files with date suffix (supports `--dry-run`) |
-| `find_uniq_errors.sh`    | Extracts and deduplicates error lines from logs    |
+⚙️ Why?
 
-All scripts follow consistent structure and are written to be **understandable, maintainable, and reusable**.
+Because Bash is still the fastest, most reliable way to:
 
----
+Automate repetitive infrastructure tasks
 
-## 🎯 Purpose
+Build quick, testable utilities
 
-This repository serves both as:
+React to outages and edge cases without external dependencies
 
-1. **A learning project** — building practical fluency with Linux/Bash
-2. **A technical showcase** — demonstrating scripting ability, attention to detail, and real-world problem solving
+✅ Target audience
 
----
+This repo is designed for:
 
-## ✅ Usage
+DevOps engineers
 
-All scripts are runnable directly from the terminal:
+Junior sysadmins
 
-```bash
-chmod +x script.sh
-./script.sh [--dry-run] [args...]
+Anyone building muscle memory for real-world Bash scripting
+
+🛠️ Status
+
+Active, growing daily.
+Every script here is written to solve something practical — not for show.
