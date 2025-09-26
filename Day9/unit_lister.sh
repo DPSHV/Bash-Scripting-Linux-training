@@ -23,14 +23,14 @@ log_error() { echo "[ERROR] $*" >&2; exit 1; }
 log_warn()  { echo "[WARN]  $*"; }
 log_info()  { echo "[INFO]  $*"; }
 
-# --- Tool checks ---
+
 for bin in systemctl awk; do
   command -v "$bin" >/dev/null 2>&1 || log_error "Missing required tool: $bin"
 done
 
 enabled_only=false
 
-# --- Args parsing ---
+
 if [ "$#" -gt 1 ]; then
   log_error "Too many arguments. Usage: $0 [--enabled-only]"
 fi
@@ -49,15 +49,14 @@ while [ "$#" -gt 0 ]; do
   shift
 done
 
-# --- Main ---
 if [ "$enabled_only" = true ]; then
   log_info "Listing enabled services (unit files)…"
-  # Columns on most distros: UNIT FILE | STATE | VENDOR PRESET
+
   systemctl --no-pager list-unit-files --type=service \
     | awk 'NR>1 && $2=="enabled" { printf "%-48s %-10s\n", $1, $2 }'
 else
   log_info "Listing active services (runtime)…"
-  # Columns: UNIT | LOAD | ACTIVE | SUB | DESCRIPTION
+
   systemctl --no-pager list-units --type=service \
     | awk 'NR>1 { printf "%-48s %-10s %-10s\n", $1, $3, $4 }'
 fi
