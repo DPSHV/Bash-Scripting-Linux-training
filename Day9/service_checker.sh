@@ -20,12 +20,12 @@ log_error() { echo "[ERROR] $*" >&2; exit 1; }
 log_warn()  { echo "[WARN]  $*"; }
 log_info()  { echo "[INFO]  $*"; }
 
-# --- Args check ---
+
 if [ "$#" -eq 0 ]; then
   log_error "Provide at least one service name"
 fi
 
-# --- Tool check ---
+
 command -v systemctl >/dev/null 2>&1 || log_error "systemctl not found"
 
 printf "%-24s %-10s %-10s\n" "SERVICE" "ACTIVE" "ENABLED"
