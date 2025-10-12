@@ -2,22 +2,22 @@
 # ================================================================
 # Script: disk_usage_report.sh
 # Description:
-#   Monitoruje zajętość dysków i zapisuje raport, jeśli przekroczony
-#   jest określony próg użycia. Pomija filesystemy tmpfs.
+#   Monitor disk usage using df(1) and generate a report
+#   if any filesystem exceeds the given threshold. tmpfs
+#   entries are ignored.
 #
 # Usage:
 #   ./disk_usage_report.sh [threshold]
-#   - threshold: wartość procentowa granicy zajętości (domyślnie 80)
+#     - threshold: percentage limit (default: 80)
 #
 # Output:
-#   - report.txt z wpisami w formacie:
-#       <YYYY-MM-DD HH:MM:SS> DISK USAGE ABOVE THRESHOLD: FS, XX%
+#   - Prints info/warning messages with timestamps
+#   - Appends warnings to report.txt in the format:
+#       <YYYY-MM-DD HH:MM:SS> [WARN] DISK USAGE ABOVE THRESHOLD: FS, XX%
 #
-# Notes:
-#   - opiera się na poleceniu `df -P`
-#   - wymaga dostępu do systemu plików
-#
-# Author: shovker
+# Exit codes:
+#   0 → all filesystems below threshold
+#   1
 # ================================================================
 
 set -euo pipefail

@@ -2,20 +2,21 @@
 # ================================================================
 # Script: fstab_validator.sh
 # Description:
-#   Sprawdza wpisy w /etc/fstab i raportuje, czy pierwszy
-#   identyfikator urządzenia jest zdefiniowany poprawnie (UUID= lub LABEL=).
+#   Validate entries in /etc/fstab and check if the first field
+#   uses UUID= or LABEL= instead of raw device paths.
 #
 # Usage:
 #   ./fstab_validator.sh
 #
 # Output:
-#   - Wypisuje linia po linii status wpisów.
-#   - Kod wyjścia:
-#       0 → wszystkie wpisy OK
-#       1 → znaleziono wpisy niepoprawne (WARN)
+#   - Prints each fstab entry with status [INFO] or [WARN].
+#   - Exit codes:
+#       0 → all entries valid
+#       1 → at least one invalid entry found
 #
 # Author: shovker
 # ================================================================
+
 
 set -euo pipefail
 
@@ -29,7 +30,7 @@ log_warn() {
     echo "< $(date '+%F %T') > [WARN] $*"
 }
 
-# Pomijamy komentarze i puste linie, analizujemy tylko 3 pierwsze kolumny
+
 awk '!/^\s*#/ && NF >= 3 {print $1, $2, $3}' /etc/fstab | \
 while read -r DEV MOUNT FS; do
     if [[ "$DEV" == UUID=* || "$DEV" == LABEL=* ]]; then
