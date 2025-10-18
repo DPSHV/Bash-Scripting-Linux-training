@@ -1,27 +1,25 @@
-# 🐧 Linux + Bash Bootcamp — Project Scripts
+# 🐧 Linux & Bash System Scripts
 
-This repository is part of the **Linux + Bash Bootcamp** and shows how Bash combined with core Linux tools can be turned into **practical, production-style utilities**.  
-The focus is on scripts that are small, transparent, and directly useful in day-to-day sysadmin and DevOps work.
-
----
-
-## 🚀 Why these scripts are valuable
-- **Lightweight** → no agents, no dependencies, just Bash and standard Linux tools.  
-- **Practical** → generate system reports, monitor thresholds, automate cleanup.  
-- **Transparent** → every line is easy to read, adapt, and extend.  
-- **Production-ready style** → logging, error handling, exit codes, safe defaults.  
-
-They fill the gap between *ad-hoc one-liners* and *full monitoring platforms* like Zabbix or Prometheus.
+A collection of **lightweight, production-style scripts** for Linux servers.  
+They show how a few lines of Bash plus standard tools can solve real problems without heavy monitoring stacks.
 
 ---
 
-## 📂 What you’ll find
-- **System reports** for quick health snapshots.  
-- **Monitoring & alerts** that log when resources exceed limits.  
-- **Cleanup scripts** to free space automatically.  
-
-Each script is small enough to run on a VM, container, or server without setup — but solid enough to integrate into cron, systemd timers, or CI/CD pipelines.
+## 🚀 Why these scripts are useful
+- **Quick insights** → check CPU, RAM, disk, processes in seconds.  
+- **Lightweight monitoring** → simple thresholds with timestamped logs.  
+- **Automation** → cleanup tasks and health checks you can drop into cron or CI/CD.  
+- **Production-ready style** → safe flags, error handling, logging, exit codes.  
 
 ---
 
-📌 *These scripts are useful because they are simple, portable, and practical. They won’t replace enterprise tools — but they give you control, speed, and a clear view of what’s happening on your system.*
+## 📂 What’s inside
+- **System reports** → snapshots of system health.  
+- **Monitoring & alerts** → log warnings when limits are exceeded.  
+- **Cleanup utilities** → free up disk space automatically.  
+
+Small, transparent, and portable — ideal for servers, VMs, or containers where you need fast results without extra dependencies.
+
+---
+
+📌 *These scripts are practical, easy to adapt, and designed to give you control and visibility over your systems with minimal effort.*
