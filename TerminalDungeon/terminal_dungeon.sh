@@ -36,7 +36,6 @@ ITEM_COUNT=2
 
 GOLD=10
 
-
 # map funtions and flow 
 init_game() {
     # map clear
@@ -63,7 +62,7 @@ init_game() {
         done
     done
 
-   # itemy
+    # itemy
     for ((i=0; i<ITEM_COUNT; i++)); do
         while true; do
             ix=$((RANDOM % MAP_LENGTH))
@@ -107,7 +106,7 @@ draw_map() {
         echo ""
     done
 
-   # pomaga na jebane migające refreshe
+    # pomaga na migające refreshe
     tput sgr0
     sleep 0.1
 }
@@ -115,60 +114,91 @@ draw_map() {
 handle_input() {
     tput civis
     read -n1 -s key
+    tput cnorm
 
     case "$key" in 
         w|W) move_player up ;;
-        s|S) move_player down;;
-        a|A) move_player left;;
-        d|D) move_player right;;
+        s|S) move_player down ;;
+        a|A) move_player left ;;
+        d|D) move_player right ;;
         q|Q) game_over ;;
     esac
 }
+
 move_player() {
-    local dx=0
-    local dy=0
+    local dx=0 dy=0
     case $1 in
-        up) ((dx=-1)) ;;
-        down) ((dx=1));;
-        left) ((dy=-1));;
+        up)    ((dx=-1));;
+        down)  ((dx=1));;
+        left)  ((dy=-1));;
         right) ((dy=1));;
     esac
 
-    new_x=$((PLAYER_X + dx))
-    new_y=$((PLAYER_Y + dy))
-
+    local new_x=$((PLAYER_X + dx))
+    local new_y=$((PLAYER_Y + dy))
     if (( new_x < 0 || new_x >= MAP_LENGTH || new_y < 0 || new_y >= MAP_WIDTH )); then
-        return  # nie ruszaj – ściana
+        return
     fi
 
+    # Co jest na polu ? 
+    local target="${MAP["$new_x,$new_y"]}"
+    case "$target" in
+        M) combat_phase ;;
+        I) loot_item ;;
+        .) : ;;
+    esac
+
+    # aktualizacja pozycji
     MAP["$PLAYER_X,$PLAYER_Y"]="."
     PLAYER_X=$new_x
     PLAYER_Y=$new_y
     MAP["$PLAYER_X,$PLAYER_Y"]="P"
-
-    tput cnorm
-
 }
+
 check_tile() {
-    ;
+    local tile=${MAP["$PLAYER_X,$PLAYER_Y"]}
+    case "$tile" in 
+        M) combat_phase ;;
+        I) loot_item ;;
+        .) : ;;
+    esac
 }
+
 combat_phase() {
-    :
+    local enemy_hp=3
+    local player_damage=$((RANDOM % 3 + 1))
+    local enemy_damage=$((RANDOM % 3 + 1))
+
+    # tura
+    enemy_hp=$((enemy_hp - player_damage))
+    PLAYER_HP=$((PLAYER_HP - enemy_damage))
+
+    # wynik tury 
+    if (( PLAYER_HP <= 0 )); then
+        game_over
+    elif (( enemy_hp <= 0 )); then
+        GOLD=$((GOLD + 5))
+        echo "YOU WON! YOU DEFEATED THE MONSTER AND EARNED 5 GOLD"
+    else
+        echo "You hit the monster for $player_damage HP, you got hit for $enemy_damage HP!"
+    fi
+
+    sleep 1.5
 }
+
 loot_item() {
-    :
+    
 }
+
 game_over() {
     :
 }
-
 
 main() {
     init_game
     while true; do
         draw_map
         handle_input
-
     done
 }
 
