@@ -1,7 +1,7 @@
 # Bash Scripting & Linux Training
 
 Repozytorium dokumentujące autorski bootcamp z Linuxa i Basha.  
-Celem projektu było praktyczne przećwiczenie administracji systemem oraz pisania skryptów produkcyjnej jakości — bez kopiowania gotowców i bez zbędnej teorii.
+Celem projektu było praktyczne przećwiczenie administracji systemem oraz pisania skryptów produkcyjnej jakości - bez kopiowania gotowców i bez zbędnej teorii.
 
 Każdy dzień to osobny etap, maksymalnie godzina pracy:  
 nowy temat systemowy, dwa realne skrypty i pytania kontrolne.  
@@ -26,7 +26,7 @@ README.md         # ten plik
 - monitoring i diagnostyka systemu  
 - bezpieczeństwo (SELinux, AppArmor, audyt)  
 - Docker, namespaces, performance tuning  
-- projekt końcowy — Terminal Dungeon
+- projekt końcowy - Terminal Dungeon
 
 ---
 
@@ -62,4 +62,4 @@ Enemy defeated. +5 gold.
 ---
 
 **Cel:** utrwalenie praktycznych umiejętności sysadmina i DevOpsa w Bashu.  
-Zero teorii — tylko działający kod.
+Z
