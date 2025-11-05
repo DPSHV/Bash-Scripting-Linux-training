@@ -1,25 +1,65 @@
-# 🐧 Linux & Bash System Scripts
+# Bash Scripting & Linux Training
 
-A collection of **lightweight, production-style scripts** for Linux servers.  
-They show how a few lines of Bash plus standard tools can solve real problems without heavy monitoring stacks.
+Repozytorium dokumentujące autorski bootcamp z Linuxa i Basha.  
+Celem projektu było praktyczne przećwiczenie administracji systemem oraz pisania skryptów produkcyjnej jakości — bez kopiowania gotowców i bez zbędnej teorii.
 
----
-
-## 🚀 Why these scripts are useful
-- **Quick insights** → check CPU, RAM, disk, processes in seconds.  
-- **Lightweight monitoring** → simple thresholds with timestamped logs.  
-- **Automation** → cleanup tasks and health checks you can drop into cron or CI/CD.  
-- **Production-ready style** → safe flags, error handling, logging, exit codes.  
+Każdy dzień to osobny etap, maksymalnie godzina pracy:  
+nowy temat systemowy, dwa realne skrypty i pytania kontrolne.  
+Całość kończy się projektem **Terminal Dungeon** – grą tekstową napisaną w czystym Bashu, która łączy wszystkie wcześniej przerobione zagadnienia.
 
 ---
 
-## 📂 What’s inside
-- **System reports** → snapshots of system health.  
-- **Monitoring & alerts** → log warnings when limits are exceeded.  
-- **Cleanup utilities** → free up disk space automatically.  
+## Struktura repozytorium
 
-Small, transparent, and portable — ideal for servers, VMs, or containers where you need fast results without extra dependencies.
+\```
+Day01–Day21/      # kolejne dni bootcampu z zadaniami i skryptami
+project/          # finalny projekt Terminal Dungeon
+README.md         # ten plik
+\```
 
 ---
 
-📌 *These scripts are practical, easy to adapt, and designed to give you control and visibility over your systems with minimal effort.*
+## Zakres
+
+- zarządzanie procesami, plikami i użytkownikami  
+- automatyzacja w Bashu (pętle, funkcje, logowanie, błędy)  
+- monitoring i diagnostyka systemu  
+- bezpieczeństwo (SELinux, AppArmor, audyt)  
+- Docker, namespaces, performance tuning  
+- projekt końcowy — Terminal Dungeon
+
+---
+
+## Efekt
+
+Po ukończeniu całego cyklu:
+- zrozumienie logiki działania systemu Linux od środka,  
+- umiejętność pisania własnych skryptów automatyzujących i raportujących,  
+- obsługa błędów, logów i edge case’ów,  
+- kompletny projekt końcowy łączący wszystkie te elementy.
+
+---
+
+## Przykładowy output (Terminal Dungeon)
+
+\```
+HP: 8 | GOLD: 15 | ENEMIES LEFT: 1
+Use W/A/S/D to move, H to heal, Q to quit
+
+. . . M . . . .
+. . I . . . . .
+. . . . . . . .
+P . . . . . . .
+. . . . . I . .
+. . . . . . . .
+. . . . . . . .
+. . . . . . . .
+
+You hit for 2, got hit for 1.
+Enemy defeated. +5 gold.
+\```
+
+---
+
+**Cel:** utrwalenie praktycznych umiejętności sysadmina i DevOpsa w Bashu.  
+Zero teorii — tylko działający kod.
